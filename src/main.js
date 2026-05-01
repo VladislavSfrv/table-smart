@@ -37,30 +37,11 @@ function render(action) {
     let state = collectState(); // состояние полей из таблицы
     let result = [...data]; // копируем для последующего изменения
 
-    sampleTable.render(result)
+
 }
 
 
 // @todo: инициализация
-
-const sampleTable = initTable({
-    tableTemplate: 'table',
-    rowTemplate: 'row',
-    before: ['filter', 'header', 'search'],
-    after: ['pagination']
-}, render);
-
-const applyPagination = initPagination(
-    sampleTable.pagination.elements, // передаём сюда элементы пагинации, найденные в шаблоне
-    (el, page, isCurrent) => { // и колбэк, чтобы заполнять кнопки страниц данными
-        const input = el.querySelector('input');
-        const label = el.querySelector('span');
-        input.value = page;
-        input.checked = isCurrent;
-        label.textContent = page;
-        return el;
-    }
-);
 
 const appRoot = document.querySelector('#app');
 appRoot.appendChild(sampleTable.container);
