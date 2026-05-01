@@ -6,9 +6,6 @@ import {data as sourceData} from "./data/dataset_1.js";
 import {initData} from "./data.js";
 import {processFormData} from "./lib/utils.js";
 
-import {initTable} from "./components/table.js";
-import {initPagination} from "./components/pagination.js";
-
 // Исходные данные используемые в render()
 const {data, ...indexes} = initData(sourceData);
 
